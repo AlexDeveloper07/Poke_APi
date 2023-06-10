@@ -22,9 +22,17 @@ class PokemonController extends Controller
         return view('pokedex.create');    
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('pokedex.show');
+
+        $pokemon = Pokemon::find($id);
+
+        if (!$pokemon) {
+            return redirect()->route('pokemons.index')->with('Error', 'El pokemon seleccionado no existe');
+        }
+
+        return view('pokedex.show', compact('pokemon'));
+            
     }
 
 
