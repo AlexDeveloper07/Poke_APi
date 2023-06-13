@@ -3,8 +3,6 @@
 @section('title', 'home')
 
 @section('content')
-
-
     <div class="container mx-auto bg-gray rounded-lg shadow-md p-4 mt-7">
         <div class="h-[92vh] flex items-center justify-center">
             <div class="swiper mySwiper">
@@ -90,7 +88,7 @@
             background-color: #F3F4F6;
         }
 
-        /* .swiper-slide:nth-child(4n) {
+        .swiper-slide:nth-child(4n) {
                                                         background-color: rgb(211, 122, 7);
                                                     }
 
@@ -116,7 +114,7 @@
 
                                                     .swiper-slide:nth-child(10n) {
                                                         background-color: rgb(54, 94, 77);
-                                                    } */
+                                                    }
     </style>
 
 

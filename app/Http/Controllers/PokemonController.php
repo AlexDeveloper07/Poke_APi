@@ -10,29 +10,29 @@ class PokemonController extends Controller
 {
     public function index()
     {
-        /* dd(Pokemon::all()); */
-       ;
+            /* dd(Pokemon::all()); */;
         return view('pokedex.index', [
             'pokemons' => Pokemon::paginate(8)
         ]);
     }
 
-     public function create()
+    public function create()
     {
-        return view('pokedex.create');    
+        return view('pokedex.create');
     }
 
-    public function show($id)
+    /**
+     * @param int $id
+     */
+    public function show(int $id)
     {
-
         $pokemon = Pokemon::find($id);
-
+        $pokemon = $pokemon->load('attachments')->loadExists('attachments');
         if (!$pokemon) {
             return redirect()->route('pokemons.index')->with('Error', 'El pokemon seleccionado no existe');
         }
 
         return view('pokedex.show', compact('pokemon'));
-            
     }
 
 

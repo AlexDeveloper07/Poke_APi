@@ -11,7 +11,6 @@
 </head>
 
 <body class="w-screen h-screen">
-
     <nav class="bg-white rounded-lg shadow-md h-[8vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -52,7 +51,7 @@
         var swiper = new Swiper(".mySwiper", {
             effect: "cards",
             grabCursor: true,
-        });
+        })
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
