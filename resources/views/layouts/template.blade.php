@@ -11,24 +11,24 @@
 </head>
 
 <body class="w-screen h-screen">
-    <nav class="bg-none rounded-lg shadow-md h-[8vh]">
+    <nav class="rounded-lg shadow-md h-[9.5vh] bg-white bg-opacity-[8%]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <a href="/">
-                            <img class="h-12 w-12 transition-transform transform hover:scale-110" src="/image/logo.png">
+                            <img class="h-12 w-12 transition-transform transform duration-300 hover:brightness-125 hover:scale-110" src="/image/logo.png">
                         </a>
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             <a href="{{ route('home') }}"
-                                class="text-red-500 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                                class="text-red-400 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
                             <a href="{{ route('pokemons.index') }}"
-                                class="text-red-500 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ver
+                                class="text-red-400 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ver
                                 pokemones</a>
                             <a href="{{ route('pokemons.create') }}"
-                                class="text-red-500 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Crear
+                                class="text-red-400 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Crear
                                 un nuevo registro</a>
                         </div>
                     </div>
@@ -45,22 +45,21 @@
 
 
     <style>
-
-        .main_container{
-            overflow: hidden;
-            height: 92vh;
+        .main_container {
+            /*             overflow: hidden; */
+            height: 80vh;
         }
-        .bg
-        {
+
+        .bg {
             top: 0;
             left: 0;
             z-index: -10;
             background-image: url("/image/bg/1.jpg");
             width: 100vw;
-            height: 100vh;
+            height: 165vh;
             position: absolute;
-
         }
+
         .bg-white {}
     </style>
 

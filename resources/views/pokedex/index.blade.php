@@ -3,58 +3,100 @@
 @section('title', 'pokeList')
 
 @section('content')
-    <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-8">
-        <button class=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded m-2" onclick="openModal()">
-            Comparar Pokemones
-        </button>
-        <div id="myModal"
-            class="fixed inset-0 flex items-center justify-center z-10 opacity-0 transition-opacity duration-300 pointer-events-none">
-            <div class="bg-white rounded-lg p-8 shadow-md border transform transition-transform duration-300">
-                <h2 class="text-2xl font-bold mb-4 text-red-500">Comparación Pokemones</h2>
-                <p>
-
-                </p>
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
-                    onclick="closeModal()">
-                    Cerrar
-                </button>
-            </div>
-        </div>
-        <table class="w-full bg-white rounded-lg shadow-md font-sans">
+    <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-8 bg-opacity-20">
+        <table class="w-full bg-white border-collapse rounded-lg overflow-hidden bg-opacity-80">
             <thead>
                 <tr>
-                    <th class="py-2 px-4 bg-red-500 text-white font-medium text-left border border-gray-200">Nombre</th>
-                    <th class="py-2 px-4 bg-red-500 text-white font-medium text-left border border-gray-200">Altura</th>
-                    <th class="py-2 px-4 bg-red-500 text-white font-medium text-left border border-gray-200">Peso</th>
+                    <th class="py-2 px-4 bg-red-500 text-white font-medium text-left border border-gray-200">Nombre del
+                        pokemon</th>
                     <th class="py-2 px-4 w-[15%] bg-red-500 text-white font-medium text-left border border-gray-200">
-                        Acciones</th>
+                        Acciones
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($pokemons as $pokemon)
                     <tr>
-                        <td class="py-2 px-4 border border-gray-200">{{ $pokemon->name }}</td>
-                        <td class="py-2 px-4 border border-gray-200">{{ $pokemon->height }} Cms</td>
-                        <td class="py-2 px-4 border border-gray-200">{{ $pokemon->weight }} Kg</td>
-                        <td class="py-2 px-4 flex items-center space-x-6 border border-gray-200">
-                            <input type="checkbox" id="pokemon_id" class="form-checkbox h-5 w-5 text-red-500 rounded">
+                        <td class="py-2 px-4 border border-separate">
+                            <div class="pokemon_container">
+                                <span>
+                                    {{ $pokemon->name }}
+                                </span>
+                                <img class="hover:scale-[115%]" src="{{ $pokemon->attachments()->skip(1)->first()->url }}">
+                            </div>
+                        </td>
+                        <td class="py-2 px-4 centered-cell hover:scale-110">
                             <a href="{{ route('pokemons.show', $pokemon) }}" class="text-red-500 hover:text-red-700">
-                                <i class="fa-solid fa-circle-info fa-lg"></i>
-                                <span class="text-sm">Detalles...</span>
+                                <i class="fa-solid fa-circle-info text-xl"></i>
+                                <span class="text-base">Detalles...</span>
                             </a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
             <tfoot>
-                <tr>
-                    <td colspan="3">
+                {{--                 <tr>
+                                       <td colspan="3">
                         {{ $pokemons->links() }}
-                    </td>
-                </tr>
+                    </td> 
+                </tr> --}}
             </tfoot>
         </table>
     </div>
+
+    <style>
+        @keyframes colorChange {
+            0% {
+                background-color: red;
+            }
+
+            50% {
+                background-color: rgb(231, 56, 123);
+            }
+
+            100% {
+                background-color: red;
+            }
+        }
+
+        tr {
+            Font-family: Consolas;
+        }
+
+        th {
+            animation: colorChange 8s infinite;
+        }
+
+        /*  .pokemon_container {
+                font-size: 1em;
+                text-align: center;
+                Font-family: Consolas;
+                display: flex;
+                align-items: center;
+            }
+
+            .pokemon_container {
+                display: flex;
+                margin-top: -3.5%;
+            }
+
+            .pokemon_container img {
+                width: 9%;
+                height: 9%;
+            } */
+
+        .pokemon_container img {
+            display: flex;
+            align-items: center;
+            margin-top: -5.5%;
+        }
+
+        .pokemon_container span {
+            font-size: 2rem;
+            text-align: center;
+            margin-left: 25%;
+        }
+    </style>
 
     <script>
         function openModal() {
