@@ -11,7 +11,7 @@
 </head>
 
 <body class="w-screen h-screen">
-    <nav class="bg-white rounded-lg shadow-md h-[8vh]">
+    <nav class="bg-none rounded-lg shadow-md h-[8vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -36,10 +36,31 @@
             </div>
         </div>
     </nav>
-    @yield('content')
+
+    <main class="main_container">
+        <div class="bg"></div>
+        @yield('content')
+    </main>
+
 
 
     <style>
+
+        .main_container{
+            overflow: hidden;
+            height: 92vh;
+        }
+        .bg
+        {
+            top: 0;
+            left: 0;
+            z-index: -10;
+            background-image: url("/image/bg/1.jpg");
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+
+        }
         .bg-white {}
     </style>
 

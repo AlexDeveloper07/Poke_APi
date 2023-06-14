@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'pokeList');
+@section('title', 'pokeList')
 
 @section('content')
     <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-8">

@@ -1,9 +1,12 @@
 @extends('layouts.template')
 
-@section('title', $pokemon->name);
+@section('title', $pokemon->name)
 
 @section('content')
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto bg-gray rounded-lg shadow-md p-4 mt-7">
+        <a href="/" class="text-black font-bold py-2 px-4 rounded mt-4">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
         <div class="bg-white rounded-lg shadow-md p-6">
             <h2 class="text-2xl font-bold mb-4 text-red-500">Detalles del Pokémon</h2>
             @if ($pokemon->attachments_exists)
@@ -13,16 +16,16 @@
                             @foreach ($pokemon->attachments->chunk(2) as $attachments)
                                 <div
                                     class="swiper-slide border-[8px] border-[#E7A1A1] grid grid-rows-5 h-full rounded-[17px] p-2">
-                                    <div class="text-center flex items-start">
-                                        <img src="/image/logo.png" alt=""
-                                            class="h-9 transition-transform animate-pulse">
-                                        <span class="mx -auto text-red-300">{{ $pokemon->name }}</span>
+                                    <img src="/image/logo.png" alt=""
+                                        class="h-9 transition-transform animate-pulse">
+                                    <div class="text-center">
+                                        <span class="mx -auto text-black">{{ $pokemon->name }}</span>
                                     </div>
 
                                     @foreach ($attachments as $attachment)
                                         <div class="overflow-hidden row-span-3 flex items-center justify-center">
                                             <img src="{{ $attachment->url }}"
-                                                class="bg-transparent object-cover w-[150px] h-[150px]">
+                                                class="bg-transparent object-cover w-[240px] h-[150px]">
                                         </div>
                                     @endforeach
                                     <div class="p-2">
@@ -51,15 +54,15 @@
 
     <style>
         /* .container {
-                                                                                                                                                                                                                        display: flex;
-                                                                                                                                                                                                                        justify-content: center;
-                                                                                                                                                                                                                        align-items: center;
-                                                                                                                                                                                                                    } */
+                                                                                                                                                                                                                                        display: flex;
+                                                                                                                                                                                                                                        justify-content: center;
+                                                                                                                                                                                                                                        align-items: center;
+                                                                                                                                                                                                                                    } */
 
         /* .container img {
-                                                                                                                                                                                                                        max-width: 50%;
-                                                                                                                                                                                                                        max-height: 50%;
-                                                                                                                                                                                                                    } */
+                                                                                                                                                                                                                                        max-width: 50%;
+                                                                                                                                                                                                                                        max-height: 50%;
+                                                                                                                                                                                                                                    } */
 
 
         .swiper {

@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mx-auto bg-gray rounded-lg shadow-md p-4 mt-7">
         <div class="h-[92vh] flex items-center justify-center">
-            <div class="swiper mySwiper">
+            <div class="swiper mySwiper  select-none">
                 <div class="swiper-wrapper">
                     {{-- Esto es una card --}}
                     <div class="swiper-slide border-[8px] border-[#E7A1A1] grid grid-rows-5 h-full rounded-[17px] p-2">
