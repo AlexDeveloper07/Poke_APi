@@ -3,13 +3,13 @@
 @section('title', $pokemon->name)
 
 @section('content')
-    <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-8 bg-opacity-50">
+    <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-5 bg-opacity-20">
         <a href="{{ route('pokemons.index') }}" class="text-black font-bold py-2 px-4 rounded mt-4">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
         <h2 class="text-2xl font-bold mb-4 text-red-500">Detalles del Pokémon</h2>
         @if ($pokemon->attachments_exists)
-            <div class="h-[92vh] flex items-center justify-center">
+            <div class="h-[65vh] w-auto flex items-center justify-center">
                 <div class="swiper mySwiper select-none">
                     <div class="swiper-wrapper">
                         @foreach ($pokemon->attachments->chunk(2) as $attachments)
@@ -63,35 +63,6 @@
             background-color: #F3F4F6;
         }
 
-        /* .swiper-slide:nth-child(4n) {
-                            background-color: rgb(211, 122, 7);
-                        }
-
-                        .swiper-slide:nth-child(5n) {
-                            background-color: rgb(118, 163, 12);
-                        }
-
-                        .swiper-slide:nth-child(6n) {
-                            background-color: rgb(180, 10, 47);
-                        }
-
-                        .swiper-slide:nth-child(7n) {
-                            background-color: rgb(35, 99, 19);
-                        }
-
-                        .swiper-slide:nth-child(8n) {
-                            background-color: rgb(0, 68, 255);
-                        }
-
-                        .swiper-slide:nth-child(9n) {
-                            background-color: rgb(218, 12, 218);
-                        }
-
-                        .swiper-slide:nth-child(10n) {
-                            background-color: rgb(54, 94, 77);
-                        } */
-
-
         .swiper-slide {
             transition: border-color 1s ease-in-out;
         }
@@ -107,5 +78,8 @@
         .swiper-slide {
             animation: changeBorderColor 3.5s infinite;
         }
+
+
+
     </style>
 @endsection

@@ -10,8 +10,13 @@ class PokemonController extends Controller
 {
     public function index()
     {
-        $pokemons = Pokemon::paginate(6)->load('attachments');
-        return view('pokedex.index', compact('pokemons'));
+        /* $pokemons = Pokemon::paginate(6)->load('attachments');
+        return view('pokedex.index', compact('pokemons')); */
+
+        return view('pokedex.index', [
+            'pokemons'=>Pokemon::paginate(6)
+        ]);
+
     }
 
     public function create()

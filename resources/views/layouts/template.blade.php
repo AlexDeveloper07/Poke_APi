@@ -12,8 +12,8 @@
 
 <body class="w-screen h-screen">
     <nav class="rounded-lg shadow-md h-[9.5vh] bg-white bg-opacity-[8%]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex items-center justify-between h-16 h-full">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <a href="/">
@@ -38,29 +38,27 @@
     </nav>
 
     <main class="main_container">
-        <div class="bg"></div>
+        <div class="bg absolute top-0 left-0 z-[-10]">
+            <img src="/image/bg/1.jpg" alt="pokeFondo" class="w-screen h-screen object-cover">
+        </div>
         @yield('content')
     </main>
 
 
 
     <style>
+        *, *:after, *:before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
         .main_container {
-            /*             overflow: hidden; */
-            height: 80vh;
+            overflow: hidden;
+            height: 90vh;
         }
-
-        .bg {
-            top: 0;
-            left: 0;
-            z-index: -10;
-            background-image: url("/image/bg/1.jpg");
-            width: 100vw;
-            height: 165vh;
-            position: absolute;
-        }
-
-        .bg-white {}
     </style>
 
 

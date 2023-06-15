@@ -3,7 +3,7 @@
 @section('title', 'pokeList')
 
 @section('content')
-    <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-8 bg-opacity-20">
+    <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-5 bg-opacity-20">
         <table class="w-full bg-white border-collapse rounded-lg overflow-hidden bg-opacity-80">
             <thead>
                 <tr>
@@ -16,13 +16,13 @@
             </thead>
             <tbody>
                 @foreach ($pokemons as $pokemon)
-                    <tr>
-                        <td class="py-2 px-4 border border-separate">
-                            <div class="pokemon_container">
-                                <span>
+                    <tr class="">
+                        <td class="py-2 pl-12 border border-separate">
+                            <div class="pokemon_container flex items-center">
+                                <img class="hover:scale-[115%]" src="{{ $pokemon->attachments()->skip(1)->first()->url }}">
+                                <span class="text-red-500">
                                     {{ $pokemon->name }}
                                 </span>
-                                <img class="hover:scale-[115%]" src="{{ $pokemon->attachments()->skip(1)->first()->url }}">
                             </div>
                         </td>
                         <td class="py-2 px-4 centered-cell hover:scale-110">
@@ -35,11 +35,13 @@
                 @endforeach
             </tbody>
             <tfoot>
-                {{--                 <tr>
-                                       <td colspan="3">
-                        {{ $pokemons->links() }}
-                    </td> 
-                </tr> --}}
+                <tr>
+                    <td colspan="3">
+                        <div class="flex items-center" >
+                            {{ $pokemons -> links() }}
+                        </div>
+                    </td>
+                </tr>
             </tfoot>
         </table>
     </div>
@@ -51,7 +53,7 @@
             }
 
             50% {
-                background-color: rgb(231, 56, 123);
+                background-color: rgb(206, 34, 100);
             }
 
             100% {
@@ -67,35 +69,23 @@
             animation: colorChange 8s infinite;
         }
 
-        /*  .pokemon_container {
-                font-size: 1em;
-                text-align: center;
-                Font-family: Consolas;
-                display: flex;
-                align-items: center;
-            }
-
-            .pokemon_container {
-                display: flex;
-                margin-top: -3.5%;
-            }
-
-            .pokemon_container img {
-                width: 9%;
-                height: 9%;
-            } */
-
         .pokemon_container img {
             display: flex;
             align-items: center;
-            margin-top: -5.5%;
         }
 
         .pokemon_container span {
-            font-size: 2rem;
+            align-content: center;
+            align-items: center;
+            font-size: 1.5rem;
             text-align: center;
             margin-left: 25%;
         }
+
+        
+
+
+
     </style>
 
     <script>
