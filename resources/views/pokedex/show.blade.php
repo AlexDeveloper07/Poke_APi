@@ -7,6 +7,9 @@
         <a href="{{ route('pokemons.index') }}" class="text-black font-bold py-2 px-4 rounded mt-4">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
+
+
+
         <h2 class="text-2xl font-bold mb-4 text-red-500">Detalles del Pokémon</h2>
         @if ($pokemon->attachments_exists)
             <div class="h-[65vh] w-auto flex items-center justify-center">
@@ -15,7 +18,7 @@
                         @foreach ($pokemon->attachments->chunk(2) as $attachments)
                             <div
                                 class="swiper-slide border-[4px] border-[#E7A1A1] grid grid-rows-5 h-full rounded-[17px] p-2 border_color">
-                                <img src="/image/logo.png" alt="" class="h-9 transition-transform animate-pulse">
+                                <img src="/image/logo.png" alt="" class="h-9 animate-pulse">
                                 <div class="text-center">
                                     <span class="mx -auto text-black">{{ $pokemon->name }}</span>
                                 </div>
@@ -34,6 +37,9 @@
                                         <small class="m-2">
                                             Peso: <b> {{ $pokemon->weight }} </b> lb
                                         </small>
+                                        <a href="{{route('pokemons.edit', $pokemon)}}">
+                                            <i class="fa-sharp fa-solid fa-pen-to-square" class="transition-transform transform duration-300 hover:scale-110"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -64,22 +70,25 @@
         }
 
         .swiper-slide {
-            transition: border-color 1s ease-in-out;
+            transition: border-color 10s ease-in-out;
         }
 
         @keyframes changeBorderColor {
-            0% { border-color: red; }
-            25% { border-color: green; }
-            50% { border-color: blue; }
-            75% { border-color: yellow; }
-            100% { border-color: red; }
+            0% {
+                border-color: rgb(243, 73, 73);
+            }
+
+            50% {
+                border-color: rgb(206, 34, 100);
+            }
+
+            100% {
+                border-color: rgb(243, 73, 73);
+            }
         }
 
         .swiper-slide {
             animation: changeBorderColor 3.5s infinite;
         }
-
-
-
     </style>
 @endsection

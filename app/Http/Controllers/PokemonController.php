@@ -14,9 +14,8 @@ class PokemonController extends Controller
         return view('pokedex.index', compact('pokemons')); */
 
         return view('pokedex.index', [
-            'pokemons'=>Pokemon::paginate(6)
+            'pokemons' => Pokemon::paginate(6)
         ]);
-
     }
 
     public function create()
@@ -36,6 +35,18 @@ class PokemonController extends Controller
         }
 
         return view('pokedex.show', compact('pokemon'));
+    }
+
+
+    public function edit(Pokemon $pokemon)
+    {
+        return view('pokedex.edit', compact('pokemon'));
+    }
+
+    public function update(Pokemon $pokemon)
+    {
+        $pokemon->save();
+        return redirect()->route('pokemons.show', $pokemon);
     }
 
 
