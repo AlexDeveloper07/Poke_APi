@@ -4,12 +4,9 @@
 
 @section('content')
     <div class="container mx-auto bg-white rounded-lg shadow-md p-6 mt-5 bg-opacity-20">
-        <a href="{{ route('pokemons.index') }}" class="text-black font-bold py-2 px-4 rounded mt-4">
+        <a href="{{ route('pokemons.index') }}" class="text-white font-bold py-2 px-4 rounded mt-4 transition-transform hover:scale-110">
             <i class="fa-solid fa-arrow-left"></i>
         </a>
-
-
-
         <h2 class="text-2xl font-bold mb-4 text-red-500">Detalles del Pokémon</h2>
         @if ($pokemon->attachments_exists)
             <div class="h-[65vh] w-auto flex items-center justify-center">
@@ -32,13 +29,14 @@
                                 <div class="p-2">
                                     <div class="jutify-between">
                                         <small class="m-2">
-                                            Altura: <b> {{ $pokemon->height }} </b> cm
+                                            Altura: <b> {{ $pokemon->height }} </b> mts
                                         </small>
                                         <small class="m-2">
-                                            Peso: <b> {{ $pokemon->weight }} </b> lb
+                                            Peso: <b> {{ $pokemon->weight }} </b> kg
                                         </small>
-                                        <a href="{{route('pokemons.edit', $pokemon)}}">
-                                            <i class="fa-sharp fa-solid fa-pen-to-square" class="transition-transform transform duration-300 hover:scale-110"></i>
+                                        <a class="transition-transform transform hover:scale-110"
+                                            href="{{ route('pokemons.edit', $pokemon, $attachment) }}">
+                                            <i class="fa-sharp fa-solid fa-pen-to-square"></i>
                                         </a>
                                     </div>
                                 </div>

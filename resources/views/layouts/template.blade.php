@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
     <title>@yield('title')</title>
 </head>
 
@@ -17,7 +18,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <a href="/">
-                            <img class="h-12 w-12 transition-transform transform duration-300 hover:brightness-125 hover:scale-110" src="/image/logo.png">
+                            <img class="h-12 w-12 transition-transform hover:scale-110 transform duration-300 hover:brightness-125" src="/image/logo.png">
                         </a>
                     </div>
                     <div class="hidden md:block">
@@ -73,6 +74,7 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </body>
 
 </html>

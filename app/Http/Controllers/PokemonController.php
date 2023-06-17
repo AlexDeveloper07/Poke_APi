@@ -10,9 +10,6 @@ class PokemonController extends Controller
 {
     public function index()
     {
-        /* $pokemons = Pokemon::paginate(6)->load('attachments');
-        return view('pokedex.index', compact('pokemons')); */
-
         return view('pokedex.index', [
             'pokemons' => Pokemon::paginate(6)
         ]);
@@ -38,14 +35,30 @@ class PokemonController extends Controller
     }
 
 
-    public function edit(Pokemon $pokemon)
+    public function edit(Request $request, Pokemon $pokemon)
     {
         return view('pokedex.edit', compact('pokemon'));
     }
 
-    public function update(Pokemon $pokemon)
+    public function update(Request $request, Pokemon $pokemon)
     {
+
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+        ]);
+
+        $pokemon->name = $validatedData['name'];
+        $pokemon->height = $validatedData['height'];
+        $pokemon->weight = $validatedData['weight'];
         $pokemon->save();
+
+/*         return response()->json([
+            'message' => 'Datos actualizados correctamente',
+            'data' => $pokemon,
+        ]); */
+
         return redirect()->route('pokemons.show', $pokemon);
     }
 
