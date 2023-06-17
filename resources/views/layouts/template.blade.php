@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
     <title>@yield('title')</title>
 </head>
 
@@ -28,9 +27,6 @@
                             <a href="{{ route('pokemons.index') }}"
                                 class="text-red-400 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ver
                                 pokemones</a>
-                            <a href="{{ route('pokemons.create') }}"
-                                class="text-red-400 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Crear
-                                un nuevo registro</a>
                         </div>
                     </div>
                 </div>
@@ -74,6 +70,7 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     
 </body>
 

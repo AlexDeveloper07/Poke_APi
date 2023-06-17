@@ -22,7 +22,7 @@ Route::get('/', HomeController::class, 'home')->name('home');
 
 Route::controller(PokemonController::class)->group(function () {
     Route::get('pokemons', 'index')->name('pokemons.index');
-    Route::get('pokemons/create', 'create')->name('pokemons.create');
+/*     Route::get('pokemons/create', 'create')->name('pokemons.create'); */
     Route::get('pokemons/show/{id}', 'show')->name('pokemons.show');
     Route::get('pokemons/{pokemon}/edit', 'edit')->name('pokemons.edit');
     Route::put('pokemons/{pokemon}', 'update')->name('pokemons.update');

@@ -15,10 +15,10 @@ class PokemonController extends Controller
         ]);
     }
 
-    public function create()
+/*     public function create()
     {
         return view('pokedex.create');
-    }
+    } */
 
     /**
      * @param int $id
